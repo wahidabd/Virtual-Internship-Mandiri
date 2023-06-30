@@ -13,5 +13,6 @@ import kotlinx.coroutines.flow.Flow
 interface NewsUseCase {
 
     fun headlines(): Flow<PagingData<News>>
+    fun search(q: String): Flow<PagingData<News>>
 
 }

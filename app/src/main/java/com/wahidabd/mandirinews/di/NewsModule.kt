@@ -6,6 +6,7 @@ import com.wahidabd.mandirinews.data.source.NewsRepository
 import com.wahidabd.mandirinews.domain.NewsInteractor
 import com.wahidabd.mandirinews.domain.NewsUseCase
 import com.wahidabd.mandirinews.presentation.home.HomeViewModel
+import com.wahidabd.mandirinews.presentation.search.SearchViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -29,4 +30,5 @@ val newsModule = module {
     single<NewsRepository> { NewsDataSource(get()) }
     single<NewsUseCase> { NewsInteractor(get()) }
     viewModel { HomeViewModel(get()) }
+    viewModel { SearchViewModel(get()) }
 }

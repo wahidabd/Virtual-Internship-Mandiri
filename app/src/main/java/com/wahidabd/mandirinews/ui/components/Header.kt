@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.navigation.EmptyDestinationsNavigator
 import com.wahidabd.mandirinews.R
+import com.wahidabd.mandirinews.presentation.destinations.SearchScreenDestination
 import com.wahidabd.mandirinews.ui.theme.ColorSecondary
 
 
@@ -48,7 +49,7 @@ fun Header(
     ) {
         if (isParent) {
             IconButton(
-                onClick = { navigator.popBackStack() }
+                onClick = { navigator.navigateUp() }
             ) {
                 Icon(
                     imageVector = Icons.Default.KeyboardArrowLeft,
@@ -67,7 +68,9 @@ fun Header(
         )
 
         if (!isParent) {
-            IconButton(onClick = {}) {
+            IconButton(onClick = {
+                navigator.navigate(SearchScreenDestination())
+            }) {
                 Icon(
                     imageVector = Icons.Default.Search,
                     tint = ColorSecondary,

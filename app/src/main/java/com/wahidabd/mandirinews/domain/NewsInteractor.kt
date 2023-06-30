@@ -17,4 +17,7 @@ class NewsInteractor(
 
     override fun headlines(): Flow<PagingData<News>> =
         repository.headlines()
+
+    override fun search(q: String): Flow<PagingData<News>> =
+        repository.search(q)
 }
